@@ -4,4 +4,5 @@ repos:
     hooks:
       - id: helm-docs
         args:
-          - --template-files=README.md.gotmpl
+          - --template-files=../README.md.gotmpl
+          - --output-file=../README.md

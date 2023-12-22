@@ -22,10 +22,10 @@ steps:
     commands:
       - git config --global user.email "woodpecker-bot@crystalnet.org"
       - git config --global user.name "woodpecker-bot"
-      - cr upload --skip-existing --owner woodpecker-ci --git-repo helm.crystalnet.org --release-name-template "helm-{{ .Name }}-{{ .Version }}"
+      - cr upload --skip-existing --owner CrystalNET-org --git-repo helm.crystalnet.org --release-name-template "helm-{{ .Name }}-{{ .Version }}"
       - git clone https://github.com/CrystalNET-org/helm.crystalnet.org.git
       - cd helm.crystalnet.org/
-      - cr index --owner woodpecker-ci --git-repo helm.crystalnet.org --pages-branch main --package-path ../.cr-release-packages --index-path ../.cr-index/index.yaml --push --release-name-template "helm-{{ .Name }}-{{ .Version }}"
+      - cr index --owner CrystalNET-org --git-repo helm.crystalnet.org --pages-branch main --package-path ../.cr-release-packages --index-path ../.cr-index/index.yaml --push --release-name-template "helm-{{ .Name }}-{{ .Version }}"
       - cd ..
       - rm -rf helm.crystalnet.org/
       - git reset --hard

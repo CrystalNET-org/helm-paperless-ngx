@@ -38,3 +38,5 @@ steps:
       - helm dependencies update chart
       - helm package chart
       - helm push *.tgz oci://harbor.crystalnet.org/charts
+    when:
+      - event: tag

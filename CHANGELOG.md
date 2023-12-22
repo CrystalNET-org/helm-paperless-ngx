@@ -4,10 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@psych0d0g, @Psych0D0g
+@Psych0D0g, @psych0d0g
 
 ### Misc
 
+- move to chart folder ([7efd334](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/7efd334aedf9dd21e764db2b404e7d8d154cec03))
 - Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]
 - Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]
 - fix dependencies ([df6ab7e](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/df6ab7e576ee06166bf7c8a9ec58913ed678ae36))

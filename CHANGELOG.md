@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.8](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.8) - 2023-12-22
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g
+
+### Misc
+
+- fix linting errors ([421f722](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/421f7227335ab11be230bc1064c1757044ed5109))
+- fix pipelines ([a382c69](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/a382c6943012ac8a6d71093b0c4520dc3d280529))
+- fix pipelines ([6357a58](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/6357a588d786afc197501dee620add01197f2e4c))
+
 ## [0.2.7](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.7) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️

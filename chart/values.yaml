@@ -216,7 +216,7 @@ config:
     email: no@mail.cf
     # -- use an pre-existing secret to provide credentials
     #    it should contain the keys paperless-user, paperless-mail and paperless-pass
-    existing_secret: 
+    existing_secret:
   ftpd:
     # -- set to true to enable builtin ftpd that uses the paperless database for authentication
     enabled: false
@@ -227,7 +227,7 @@ config:
   consumer:
     # -- let the consumer recurse into subdirectories for new documents
     recursive: true
-  database: 
+  database:
     # -- type can either be mariadb, postgresql or sqlite
     type: postgresql
     # -- only needed when type is mariadb and mariadb.enabled is set to false
@@ -235,14 +235,14 @@ config:
     # @default -- See [values.yaml](./values.yaml)
     mariadb:
       # -- hostname where your external mariadb is reachable
-      host: localhost 
+      host: localhost
       # -- port to connect to
       port: 3306
       # -- database schema that holds the paperless tables
       schema: paperless
       # -- use an pre-existing secret to provide credentials
       #    it should contain the keys mysql-user and mysql-pass
-      existing_secret: 
+      existing_secret:
       # -- mariadb user to use for our connection
       user: paperless-user
       # -- mariadb password to use for our connection

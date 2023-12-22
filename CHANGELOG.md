@@ -8,6 +8,8 @@
 
 ### Misc
 
+- fix pipelines ([81f298f](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/81f298fea6e1481d11b75d706e11cbfb3f100821))
+- fix pipelines ([395b31e](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/395b31e52e49bfa548e167535cee0876cb2e51b5))
 - move to chart folder ([49d64cd](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/49d64cd5b0497ecdc4591c319fdcfdd46c53d11b))
 - move to chart folder ([7efd334](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/7efd334aedf9dd21e764db2b404e7d8d154cec03))
 - Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]

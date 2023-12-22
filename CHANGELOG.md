@@ -8,6 +8,7 @@
 
 ### Misc
 
+- update both readme's on release ([0b5d147](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/0b5d147bd7c73ca9bc28dadd48f7e0c3433e640d))
 - push to harbor aswell ([e1544b5](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/e1544b587c01ac195c02fc89f35a2e95c1dd0ccc))
 
 ## [0.2.9](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.9) - 2023-12-22

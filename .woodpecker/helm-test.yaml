@@ -1,7 +1,7 @@
 when:
   - event: tag
   - event: push
-    branch: main
+    branch: ${CI_REPO_DEFAULT_BRANCH}
   - event: pull_request
 
 steps:

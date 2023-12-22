@@ -20,7 +20,6 @@ steps:
       - LOG_LEVEL=debug renovate --ignore-pr-author true
 when:
   - event: cron
-    branch: main
+    branch: ${CI_REPO_DEFAULT_BRANCH}
   - event: manual
-    branch: main
-    evaluate: 'TASK == "renovate"'
+    branch: ${CI_REPO_DEFAULT_BRANCH}

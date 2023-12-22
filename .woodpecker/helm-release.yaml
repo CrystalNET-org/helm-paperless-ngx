@@ -12,7 +12,7 @@ steps:
       - apk --no-cache add helm
       - helm repo add bitnami https://charts.bitnami.com/bitnami
       - mkdir -p .cr-index
-      - cr package .
+      - cr package chart
 
   release-chart:
     image: quay.io/helmpack/chart-releaser:v1.6.1

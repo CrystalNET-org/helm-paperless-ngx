@@ -8,8 +8,8 @@ steps:
   lint:
     image: alpine/helm:3.13.3
     commands:
-      - helm dependencies update
-      - helm lint --with-subcharts
+      - helm dependencies update chart
+      - helm lint --with-subcharts chart
 
   test-chart:
     image: quay.io/helmpack/chart-testing:v3.10.1
@@ -18,5 +18,5 @@ steps:
       - git fetch origin main --unshallow --no-tags || true
       - git fetch origin main --no-tags || true
       - git branch main origin/main || true
-      - ct list-changed --config ct.yaml
-      - ct lint --config ct.yaml
+      - ct list-changed --config ct.yaml chart
+      - ct lint --config ct.yaml chart

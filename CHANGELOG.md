@@ -8,6 +8,7 @@
 
 ### Misc
 
+- update repos for pipeline to point to cache ([e82583d](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/e82583dc3f23ee9f266b7178743a013ca75d7b72))
 - update repos for pipeline to point to cache ([d75fac8](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/d75fac8e4e9c78246eb6af8e9ce8af23854d10ae))
 - update readme template ([d4c8e22](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/d4c8e22e2eb46988e2dd7374294bdaba8a10faf9))
 - update both readme's on release ([0b5d147](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/0b5d147bd7c73ca9bc28dadd48f7e0c3433e640d))

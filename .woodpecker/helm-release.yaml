@@ -10,7 +10,7 @@ steps:
     image: quay.io/helmpack/chart-releaser:v1.6.1
     commands:
       - mkdir -p .cr-index
-      - cr package charts/woodpecker
+      - cr package .
 
   release-chart:
     image: quay.io/helmpack/chart-releaser:v1.6.1

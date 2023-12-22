@@ -6,14 +6,11 @@ when:
   - event: pull_request
 
 steps:
-  add-helm-repo:
-    image: alpine/helm:3.13.3
-    commands:
-      - helm repo add bitnami https://charts.bitnami.com/bitnami
-
   pack-chart:
     image: quay.io/helmpack/chart-releaser:v1.6.1
     commands:
+      - apk --no-cache add helm
+      - helm repo add bitnami https://charts.bitnami.com/bitnami
       - mkdir -p .cr-index
       - cr package .
 

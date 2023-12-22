@@ -4,10 +4,13 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Psych0D0g, @psych0d0g
+@psych0d0g, @Psych0D0g
 
 ### Misc
 
+- Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]
+- Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]
+- fix dependencies ([df6ab7e](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/df6ab7e576ee06166bf7c8a9ec58913ed678ae36))
 - fix dependencies ([495f50c](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/495f50cd3011409367c768ad0e2c746e5c41bd0b))
 - fix dependencies ([fb32f24](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/fb32f24f6b1ba915df90257168ffb3dce37d8a0a))
 - fix dependencies ([7e6de7e](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/7e6de7eb1de86fcd7b616921559d0c3d1ee7c6df))

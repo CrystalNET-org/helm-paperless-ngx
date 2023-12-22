@@ -2,7 +2,7 @@ version: 1
 
 steps:
   release-helper:
-    image: woodpeckerci/plugin-ready-release-go:1.0.3
+    image: harbor.crystalnet.org/library/plugin-ready-release-helm:1.0.3
     pull: true
     settings:
       release_branch: ${CI_REPO_DEFAULT_BRANCH}

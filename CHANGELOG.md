@@ -8,6 +8,7 @@
 
 ### Misc
 
+- pack chart ([a674585](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/a674585c3003ae5f8f31d3fe3782babc62c5c448))
 - add release job ([9fe7a32](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/9fe7a32339d68cfa4ad63a7a7fc6ab57e4eb43d1))
 - add release job ([b65f324](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/b65f32483c2903d48356f0ebed7df419ac97b62c))
 - add release job ([ae475cc](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/ae475cc192cb1de6f1185abedb14130e226a251f))

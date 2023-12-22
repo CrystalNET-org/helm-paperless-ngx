@@ -1,5 +1,3 @@
-version: 1
-
 steps:
   release-helper:
     image: harbor.crystalnet.org/library/plugin-ready-release-helm:1.0.3

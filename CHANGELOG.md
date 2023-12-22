@@ -8,6 +8,7 @@
 
 ### Misc
 
+- fix dependencies ([fb32f24](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/fb32f24f6b1ba915df90257168ffb3dce37d8a0a))
 - fix dependencies ([7e6de7e](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/7e6de7eb1de86fcd7b616921559d0c3d1ee7c6df))
 - Update Helm release redis to ~18.6.0 [[#1](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/1)]
 - pack chart ([6d1c5ff](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/6d1c5ffdbbec2159a0e634a48193321c8d811aa6))

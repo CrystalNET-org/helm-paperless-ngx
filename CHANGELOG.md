@@ -8,6 +8,7 @@
 
 ### Misc
 
+- switch to new docker image for ftpd ([4e9f905](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/4e9f905b704656d60d66ac7acfbd2db337694703))
 - switch to new docker image for ftpd ([ccf6a3a](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/ccf6a3a78d7a7885aaaab498d3bcacd0161a6eef))
 - release to harbor only on tag ([e356798](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/e356798853685affef86ec37d1ee0de06ffd8312))
 - fix repo path ([f0c5359](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/f0c5359ef8c5f8ce61332f74675318581ef05375))

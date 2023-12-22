@@ -218,7 +218,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Key | Description | Default |
 |-----|-------------|---------|
 | `ftpd_image.pullPolicy` | pull policy, if you set tag to latest, this should be set to Always to not end up with stale builds | `"IfNotPresent"` |
-| `ftpd_image.repository` | referencing the docker image to use for the ftpd component | `"harbor.crystalnet.org/library/paperless_ftpd"` |
+| `ftpd_image.repository` | referencing the docker image to use for the ftpd component | `"harbor.crystalnet.org/library/paperless-ftpd"` |
 | `ftpd_image.tag` | Overrides the image tag whose default is the chart appVersion. | `"0.2.3"` |
 | `mediaVolume` | The list of additional volumes that will be mounted inside paperless pod, this one to `/paperless/library`. | See [values.yaml](./values.yaml) |
 | `postgresql.auth.database` | define database schema name that should be available | `"paperless"` |

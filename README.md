@@ -38,8 +38,15 @@ Paperless-ngx A community-supported supercharged version of paperless: scan, ind
 
 ## TL;DR
 
+Directly install:
 ```shell
 helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
+```
+
+install using chartMuseum:
+```shell
+helm repo add https://charts.crystalnet.org
+helm install my-release paperless-ngx
 ```
 
 ## Introduction

@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD033 -->
 
 <h1 align="center">
-    <a href="https://github.com/paperless-ngx/paperless-ngx">
+    <a href="https://github.com/CrystalNET-org/helm-paperless-ngx">
         <img src="https://avatars.githubusercontent.com/u/99562962?s=48&v=4" alt="Logo" style="max-height: 150px">
     </a>
 </h1>
@@ -18,7 +18,7 @@
   ](LICENSE)
   <br/>
   ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
-  ![Version: 0.2.4](https://img.shields.io/badge/Version-0.2.4-informational?style=flat-square)
+  ![Version: 0.2.5](https://img.shields.io/badge/Version-0.2.5-informational?style=flat-square)
   ![AppVersion: 2.1.3](https://img.shields.io/badge/AppVersion-2.1.3-informational?style=flat-square)
   [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/psych0d0g)](https://artifacthub.io/packages/helm/psych0d0g/paperless-ngx)
 
@@ -26,21 +26,20 @@
 
 ---
 
-## [Paperless Ngx](https://github.com/paperless-ngx/paperless-ngx)
+## [Paperless Ngx](https://github.com/CrystalNET-org/helm-paperless-ngx)
 
-> _Disclaimer: This application has been developed by the [Paperless Ngx](https://github.com/paperless-ngx/paperless-ngx) community._
+> _Disclaimer: This application has been developed by the [Paperless Ngx](https://github.com/CrystalNET-org/helm-paperless-ngx) community._
 
 Paperless-ngx A community-supported supercharged version of paperless: scan, index and archive all your physical documents.
 
-[> More about Paperless Ngx](https://github.com/paperless-ngx/paperless-ngx)
+[> More about Paperless Ngx](https://github.com/CrystalNET-org/helm-paperless-ngx)
 
 ---
 
 ## TL;DR
 
 ```shell
-helm repo add psych0d0g https://psych0d0g.github.io/helm-charts
-helm install my-release psych0d0g/paperless-ngx
+helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
 ```
 
 ## Introduction
@@ -68,8 +67,7 @@ Kubernetes: `>=1.22.0-0`
 To install the chart with the release name `my-release`:
 
 ```shell
-helm repo add psych0d0g https://psych0d0g.github.io/helm-charts
-helm install my-release psych0d0g/paperless-ngx
+helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
 ```
 
 These commands deploy paperless-ngx on the Kubernetes cluster in the default configuration.
@@ -217,13 +215,13 @@ The command removes all the Kubernetes components associated with the chart and 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```shell
-helm install my-release --set fullnameOverride=my-paperless-ngx psych0d0g/paperless-ngx
+helm install my-release --set fullnameOverride=my-paperless-ngx oci://harbor.crystalnet.org/charts/paperless-ngx
 ```
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```shell
-helm install my-release -f values.yaml psych0d0g/paperless-ngx
+helm install my-release -f values.yaml oci://harbor.crystalnet.org/charts/paperless-ngx
 ```
 
 > **Tip:** You can use the default values.yaml

@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.11](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.11) - 2023-12-22
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g
+
+### Misc
+
+- add harbor login ([75b578b](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/75b578b5e2f4f8c6054bf2a01a772668f5c78dd9))
+
 ## [0.2.10](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.10) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️

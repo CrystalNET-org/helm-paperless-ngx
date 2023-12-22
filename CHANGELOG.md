@@ -4,10 +4,12 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Psych0D0g
+@johndoe, @Psych0D0g
 
 ### Misc
 
+- patch release helper to generate readme ([6d17060](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/6d17060fc88a0472cba225ddd29a3a3c39ec7991))
+- switch release helper image ([c388b90](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/c388b9091ec690f09c04c6d0459ba10ca0b3d347))
 - fix readme ([d92f458](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/d92f45897b696d58530287625081df276c7edda0))
 - fix readme ([4ee8a68](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/4ee8a68fd58fe8dacb9bc416848045dac2c80536))
 - fix readme ([0d485b4](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/0d485b42a26d28435b7e85300e4630209a3375fc))

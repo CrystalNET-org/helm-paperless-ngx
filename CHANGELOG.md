@@ -8,6 +8,8 @@
 
 ### Misc
 
+- release to harbor only on tag ([e356798](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/e356798853685affef86ec37d1ee0de06ffd8312))
+- fix repo path ([f0c5359](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/f0c5359ef8c5f8ce61332f74675318581ef05375))
 - update repos for pipeline to point to cache ([e82583d](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/e82583dc3f23ee9f266b7178743a013ca75d7b72))
 - update repos for pipeline to point to cache ([d75fac8](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/d75fac8e4e9c78246eb6af8e9ce8af23854d10ae))
 - update readme template ([d4c8e22](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/d4c8e22e2eb46988e2dd7374294bdaba8a10faf9))

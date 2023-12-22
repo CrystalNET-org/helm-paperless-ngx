@@ -23,7 +23,7 @@
   {{ template "chart.typeBadge" . }}
   {{ template "chart.versionBadge" . }}
   {{ template "chart.appVersionBadge" . }}
-  [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/psych0d0g)](https://artifacthub.io/packages/helm/psych0d0g/paperless-ngx)
+  [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/CrystalNET)](https://artifacthub.io/packages/helm/crystalnet/paperless-ngx)
 
 </div>
 
@@ -42,15 +42,15 @@ Paperless-ngx A community-supported supercharged version of paperless: scan, ind
 
 ## TL;DR
 
-Directly install:
+Direct install via oci://:
 ```shell
 helm install my-release oci://harbor.crystalnet.org/charts/{{ template "chart.name" . }}
 ```
 
 install using chartMuseum:
 ```shell
-helm repo add https://charts.crystalnet.org
-helm install my-release paperless-ngx
+helm repo add crystalnet https://charts.crystalnet.org
+helm install my-release crystalnet/{{ template "chart.name" . }}
 ```
 
 ## Introduction
@@ -69,8 +69,15 @@ This chart bootstraps a {{ template "chart.title" . }} deployment on a [Kubernet
 
 To install the chart with the release name `my-release`:
 
+Direct install via oci://:
 ```shell
 helm install my-release oci://harbor.crystalnet.org/charts/{{ template "chart.name" . }}
+```
+
+install using chartMuseum:
+```shell
+helm repo add crystalnet https://charts.crystalnet.org
+helm install my-release crystalnet/{{ template "chart.name" . }}
 ```
 
 These commands deploy {{ template "chart.name" . }} on the Kubernetes cluster in the default configuration.

@@ -8,6 +8,7 @@
 
 ### Misc
 
+- put templated out readme into charts dir ([ac1ba49](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/ac1ba4930425ed1d876b83a03b40cc73e0d90c40))
 - patch release helper to generate readme ([6d17060](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/6d17060fc88a0472cba225ddd29a3a3c39ec7991))
 - switch release helper image ([c388b90](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/c388b9091ec690f09c04c6d0459ba10ca0b3d347))
 - fix readme ([d92f458](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/d92f45897b696d58530287625081df276c7edda0))

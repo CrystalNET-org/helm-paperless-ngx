@@ -19,5 +19,8 @@ steps:
     commands:
       - LOG_LEVEL=debug renovate --ignore-pr-author true
 when:
-  event: [cron, manual]
-  branch: main
+  - event: cron
+    branch: main
+  - event: manual
+    branch: main
+    evaluate: 'TASK == "renovate"'

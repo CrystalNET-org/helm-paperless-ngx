@@ -1,0 +1,9 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "branchPrefix": "renovate/",
+    "dependencyDashboard": true,
+    "dependencyDashboardTitle": "Dependency Dashboard",
+    "gitAuthor": "Renovate Bot <renovate@crystalnet.org>",
+    "platform": "github",
+    "repositories": ["CrystalNET-org/helm-paperless-ngx"]
+}

@@ -1,0 +1,29 @@
+{{- if .Values.mediaVolume.enabled -}}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "paperless.fullname" $ }}-mediavol-{{ .Values.mediaVolume.name }}
+  labels:
+    {{- include "paperless.labels" $ | nindent 4 }}
+    {{- with $.Values.global.commonLabels }}{{ toYaml . | nindent 4 }}{{ end }}
+spec:
+  storageClassName: {{ .Values.mediaVolume.volumeSpec.storageClassName | quote }}
+  selector:
+    matchLabels:
+      {{- include "common.labels.matchLabels" $ | nindent 6 }}
+      paperless-ngx-volume: {{ .Values.mediaVolume.name }}
+  accessModes: {{ toYaml .Values.mediaVolume.volumeSpec.accessModes | nindent 4 }}
+  resources:
+    requests: {{ toYaml .Values.mediaVolume.volumeSpec.capacity | nindent 6 }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "paperless.fullname" $ }}-mediavol-{{ .Values.mediaVolume.name }}
+  labels:
+    {{- include "paperless.labels" $ | nindent 4 }}
+    {{- with $.Values.global.commonLabels }}{{ toYaml . | nindent 4 }}{{ end }}
+    paperless-ngx-volume: {{ .Values.mediaVolume.name }}
+spec: {{ toYaml .Values.mediaVolume.volumeSpec | nindent 2 }}
+{{- end }}

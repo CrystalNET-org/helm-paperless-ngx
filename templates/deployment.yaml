@@ -1,0 +1,213 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "paperless.fullname" . }}
+  labels:
+    {{- include "paperless.labels" . | nindent 4 }}
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "paperless.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "paperless.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}-webserver
+          command: 
+          - gunicorn 
+          - -c 
+          - /usr/src/paperless/gunicorn.conf.py
+          - paperless.asgi:application
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          env:
+            {{- include "paperless.env" . | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            {{- include "paperless.volumeMounts" . | nindent 12 }}
+            - name: data
+              mountPath: /var/paperless/data
+        - name: {{ .Chart.Name }}-consumer
+          command: 
+          - python3
+          - manage.py
+          - document_consumer
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- include "paperless.env" . | nindent 12 }}
+          livenessProbe:
+            exec:
+              command:
+              - cat
+              - /proc/1/cmdline
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /proc/1/cmdline
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            {{- include "paperless.volumeMounts" . | nindent 12 }}
+            - name: data
+              mountPath: /var/paperless/data
+        - name: {{ .Chart.Name }}-celery
+          command: 
+          - celery
+          - --app
+          - paperless
+          - worker
+          - --loglevel
+          - INFO
+          - -f
+          - /dev/stdout
+          - --without-mingle
+          - --without-gossip
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- include "paperless.env" . | nindent 12 }}
+          livenessProbe:
+            exec:
+              command:
+              - cat
+              - /proc/1/cmdline
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /proc/1/cmdline
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            {{- include "paperless.volumeMounts" . | nindent 12 }}
+            - name: celerydata
+              mountPath: /var/paperless/data
+        - name: {{ .Chart.Name }}-celery-beat
+          command: 
+          - celery
+          - --app
+          - paperless
+          - beat
+          - --loglevel
+          - INFO
+          - -f
+          - /dev/stdout
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- include "paperless.env" . | nindent 12 }}
+          livenessProbe:
+            exec:
+              command:
+              - cat
+              - /proc/1/cmdline
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /proc/1/cmdline
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            {{- include "paperless.volumeMounts" . | nindent 12 }}
+            - name: celerydata
+              mountPath: /var/paperless/data
+        {{- if .Values.config.ftpd.enabled }}
+        - name: {{ .Chart.Name }}-ftp
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.ftpd_image.repository }}:{{ .Values.ftpd_image.tag | default "latest" }}"
+          imagePullPolicy: {{ .Values.ftpd_image.pullPolicy }}
+          ports:
+            - name: ftp
+              containerPort: 2121
+              protocol: TCP
+            - name: pasv1
+              containerPort: 4559
+              protocol: TCP
+            - name: pasv2
+              containerPort: 4560
+              protocol: TCP
+            - name: pasv3
+              containerPort: 4561
+              protocol: TCP
+            - name: pasv4
+              containerPort: 4562
+              protocol: TCP
+            - name: pasv5
+              containerPort: 4563
+              protocol: TCP
+            - name: pasv6
+              containerPort: 4564
+              protocol: TCP
+          env:
+            {{- include "paperless.env" . | nindent 12 }}
+          livenessProbe:
+            tcpSocket:
+              port: 2121
+          readinessProbe:
+            tcpSocket:
+              port: 2121
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: consume
+              mountPath: /var/paperless/consume
+            - name: ftpd-config
+              mountPath: /opt/pureftpd/etc/pureftpd.conf
+              subPath: pureftpd.conf
+            - name: temp
+              mountPath: /tmp/
+        {{- end}}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        {{- include "paperless.volumes" . | nindent 8 }}

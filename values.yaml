@@ -1,0 +1,270 @@
+global:
+  # -- Labels to apply to all resources.
+  commonLabels: {}
+  # -- Reference to one or more secrets to be used when pulling images
+  #    (https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+  imagePullSecrets: []
+
+# -- String to partially override `common.names.fullname` template (will maintain the release name)
+nameOverride: ""
+# -- String to fully override `common.names.fullname` template
+fullnameOverride: ""
+
+image:
+  # -- referencing the docker image to use for the deployment
+  repository: ghcr.io/paperless-ngx/paperless-ngx
+  # -- pull policy, if you set tag to latest, this should be set to Always to not end up with stale builds
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+ftpd_image:
+  # -- referencing the docker image to use for the ftpd component
+  repository: harbor.crystalnet.org/library/pureftpd
+  # -- pull policy, if you set tag to latest, this should be set to Always to not end up with stale builds
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: "0.2.2"
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  #    If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# -- If needed, set some annotations to the deployed pods
+podAnnotations: {}
+
+podSecurityContext:
+  # -- set filesystem group access to the same as runAsGroup
+  fsGroup: 1000
+  # -- ensure the container dosnt run with not-needed root permissions
+  runAsNonRoot: true
+  # -- run the deployment as a user with this UID
+  runAsUser: 1000
+  # -- run the deployment as a group with this GID, should match fsGroup above
+  runAsGroup: 1000
+  # -- change fs mount permissions if they are not matching desired fsGroup
+  fsGroupChangePolicy: "OnRootMismatch"
+  seccompProfile:
+    # -- secure computing mode - see: https://kubernetes.io/docs/tutorials/security/seccomp/
+    type: RuntimeDefault
+
+securityContext:
+  capabilities:
+    # -- drop unneccessary permissions
+    drop:
+    - ALL
+  # -- mount / as readonly, writeable directorys are explicitely mounted
+  readOnlyRootFilesystem: true
+  # -- Controls whether a process can gain more privileges than its parent process
+  allowPrivilegeEscalation: false
+
+service:
+  # -- usually ClusterIP if you have an ingress in place,
+  #    could also be set to LoadBalancer if for example metallb is in place
+  type: ClusterIP
+
+ingress:
+  # -- Enable creation of an ingress object for the deployment
+  enabled: false
+  # -- uses the default ingress class if not set
+  className: ""
+  # -- add annotations to the ingress object (for example to have certificates managed by cert-manager)
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 256m
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    # -- Hostname the ingress should react for
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+# -- Limit the pods ressources if needed
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# -- Define a subset of worker nodes where the deployment can be scheduled on
+nodeSelector: {}
+
+# -- setup tolerations if you for example want to have a dedicated worker node that only runs paperless
+tolerations: []
+
+# -- define affinity, to have the pod run on the same node as other specific things
+affinity: {}
+
+# Enable and configure redis subchart under this key.
+# If enabled, the app's redis envs will be set for you.
+# [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/redis)
+# -- @default -- See https://github.com/bitnami/charts/tree/master/bitnami/redis#parameters for more options
+redis:
+  # -- provision an instance of the redis sub-chart
+  enabled: true
+  # -- default port for redis to listen on
+  redisPort: 6379
+  # -- can be set to replication to spawn a full redis cluster with 3 nodes instead
+  architecture: standalone
+  auth:
+    # -- enable redis authentication mode
+    enabled: true
+    # -- password that gets used for the connection between paperless and redis
+    password: "changeme"
+
+# Enable and configure mariadb database subchart under this key.
+# If enabled, the app's db envs will be set for you.
+# [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/mariadb)
+# @default -- See [values.yaml](./values.yaml)
+mariadb:
+  # -- provision an instance of the mariadb sub-chart
+  enabled: false
+  auth:
+    # -- define database schema name that should be available
+    database: paperless
+    # -- username to connect to the database
+    username: paperless
+    # -- password to connect to the database
+    password: changeme
+    # -- dedicated root password for the database (normally not used but needed for creation of schemas etc.)
+    rootPassword: changeme
+  primary:
+    persistence:
+      # -- enable to not loose your database contents on updates
+      enabled: false
+      # storageClass: ""
+      # size: 8Gi
+
+# Enable and configure postgresql database subchart under this key.
+# If enabled, the app's db envs will be set for you.
+# [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/postgresql)
+# @default -- See [values.yaml](./values.yaml)
+postgresql:
+  # -- provision an instance of the postgresql sub-chart
+  enabled: true
+  auth:
+    # -- define database schema name that should be available
+    database: paperless
+    # -- username to connect to the database
+    username: paperless
+    # -- password to connect to the database
+    password: changeme
+
+persistence:
+  consume:
+    # -- Enable paperless consume dir persistence using `PVC`. If false, use emptyDir (usually not needed)
+    enabled: false
+    # Claims that pods are allowed to reference (see
+    # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumeclaim-v1-core
+    # for structural reference)
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 2Gi
+  data:
+    # -- Enable paperless data persistence using `PVC`. (search index, SQLite database, classification model, etc)
+    enabled: true
+    # Claims that pods are allowed to reference (see
+    # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumeclaim-v1-core
+    # for structural reference)
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+
+  log:
+    # -- Enable paperless data persistence using `PVC`. (search index, SQLite database, classification model, etc)
+    enabled: true
+    # Claims that pods are allowed to reference (see
+    # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumeclaim-v1-core
+    # for structural reference)
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+
+config:
+  auth:
+    # -- default username for the admin user
+    username: admin
+    # -- default password for the admin user
+    password: admin
+    # -- default email for the admin user
+    email: no@mail.cf
+    # -- use an pre-existing secret to provide credentials
+    #    it should contain the keys paperless-user, paperless-mail and paperless-pass
+    existing_secret: 
+  ftpd:
+    # -- set to true to enable builtin ftpd that uses the paperless database for authentication
+    enabled: false
+    # -- loadbalancer for ease of use, you could potentially also use clusterip with an nginx tcp-services configmap
+    service_type: LoadBalancer
+    # -- Public IP used for the embedded FTPD for passive mode (usually your loadbalancer IP)
+    public_ip: "127.0.0.1"
+  consumer:
+    # -- let the consumer recurse into subdirectories for new documents
+    recursive: true
+  database: 
+    # -- type can either be mariadb, postgresql or sqlite
+    type: postgresql
+    # -- only needed when type is mariadb and mariadb.enabled is set to false
+    #    meaning you would use an external already existing mariadb instance
+    # @default -- See [values.yaml](./values.yaml)
+    mariadb:
+      # -- hostname where your external mariadb is reachable
+      host: localhost 
+      # -- port to connect to
+      port: 3306
+      # -- database schema that holds the paperless tables
+      schema: paperless
+      # -- use an pre-existing secret to provide credentials
+      #    it should contain the keys mysql-user and mysql-pass
+      existing_secret: 
+      # -- mariadb user to use for our connection
+      user: paperless-user
+      # -- mariadb password to use for our connection
+      pass: password
+  # -- Url where paperless is reachable via browser (including http(s)://)
+  paperless_url: "https://paperless.domain"
+  # -- Languages to be used for ocr (only pre-installed languages are supported)
+  ocr_languages:
+    - deu
+    - eng
+
+# -- The list of additional volumes that will be mounted inside paperless pod, this one to `/paperless/library`.
+# @default -- See [values.yaml](./values.yaml)
+mediaVolume:
+  enabled: false
+#   name: library # this volume will be mounted into `/paperless/library`
+#   readOnly: false # is this volume readonly ? (optional, default true)
+#   volumeSpec: # see https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumespec-v1-core
+#     accessModes:
+#       - ReadWriteOnce
+#     capacity:
+#       storage: 8Ti
+#     nfs:
+#       path: /nas/games
+#       server: my-nfs-server.example.com

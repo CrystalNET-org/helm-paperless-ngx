@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "paperless.fullname" . }}-config
+  labels:
+    {{- include "paperless.labels" . | nindent 4 }}
+data:
+  pureftpd.conf: |-
+    ChrootEveryone               yes
+    VerboseLog                   yes
+    BrokenClientsCompatibility   yes
+    MaxClientsNumber             50
+    Daemonize                    no
+    MaxClientsPerIP              8
+    PassivePortRange             4559 4564
+    DisplayDotFiles              yes
+    AnonymousOnly                no
+    NoAnonymous                  yes
+    SyslogFacility               ftp
+    DontResolve                  yes
+    MaxIdleTime                  15
+    LimitRecursion               10000 8
+    AnonymousCanCreateDirs       no
+    MaxLoad                      4
+    AntiWarez                    yes
+    Umask                        133:022
+    MinUID                       1000
+    AllowUserFXP                 no
+    AllowAnonymousFXP            no
+    ProhibitDotFilesWrite        no
+    ProhibitDotFilesRead         no
+    AutoRename                   no
+    AnonymousCantUpload          yes
+    MaxDiskUsage                  99
+    CustomerProof                yes
+    IPV4Only                     yes
+    AltLog                       clf:/tmp/pureftpd.log
+    ForcePassiveIP               {{ .Values.config.ftpd.public_ip }}
+    #Include                     additional.conf
+    ExtAuth                      /tmp/ftpd.sock

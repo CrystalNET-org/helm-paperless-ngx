@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.9](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.9) - 2023-12-22
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g
+
+### Misc
+
+- remove hook ([1496728](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/14967280629cf4aafc204767d6dbad8e4db90393))
+
 ## [0.2.8](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.8) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️

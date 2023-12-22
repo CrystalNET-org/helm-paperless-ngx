@@ -10,6 +10,7 @@ steps:
     image: quay.io/helmpack/chart-releaser:v1.6.1
     commands:
       - mkdir -p .cr-index
+      - helm dependencies update
       - cr package .
 
   release-chart:

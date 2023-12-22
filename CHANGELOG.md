@@ -8,6 +8,8 @@
 
 ### Misc
 
+- fix readme ([4ee8a68](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/4ee8a68fd58fe8dacb9bc416848045dac2c80536))
+- fix readme ([0d485b4](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/0d485b42a26d28435b7e85300e4630209a3375fc))
 - remove hook ([1496728](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/14967280629cf4aafc204767d6dbad8e4db90393))
 
 ## [0.2.8](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.8) - 2023-12-22

@@ -8,6 +8,7 @@
 
 ### Misc
 
+- move to chart folder ([49d64cd](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/49d64cd5b0497ecdc4591c319fdcfdd46c53d11b))
 - move to chart folder ([7efd334](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/7efd334aedf9dd21e764db2b404e7d8d154cec03))
 - Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]
 - Update Helm release mariadb to v15 [[#2](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/2)]

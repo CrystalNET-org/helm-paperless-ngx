@@ -31,3 +31,10 @@ steps:
       - git reset --hard
     when:
       - event: tag
+
+  release-chart-to-harbor:
+    image: alpine/helm:3.13.3
+    commands:
+      - helm dependencies update chart
+      - helm package chart
+      - helm push *.tgz oci://harbor.crystalnet.org/charts

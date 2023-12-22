@@ -20,7 +20,7 @@
   ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
   ![Version: 0.2.10](https://img.shields.io/badge/Version-0.2.10-informational?style=flat-square)
   ![AppVersion: 2.1.3](https://img.shields.io/badge/AppVersion-2.1.3-informational?style=flat-square)
-  [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/psych0d0g)](https://artifacthub.io/packages/helm/psych0d0g/paperless-ngx)
+  [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/CrystalNET)](https://artifacthub.io/packages/helm/crystalnet/paperless-ngx)
 
 </div>
 
@@ -38,15 +38,15 @@ Paperless-ngx A community-supported supercharged version of paperless: scan, ind
 
 ## TL;DR
 
-Directly install:
+Direct install via oci://:
 ```shell
 helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
 ```
 
 install using chartMuseum:
 ```shell
-helm repo add https://charts.crystalnet.org
-helm install my-release paperless-ngx
+helm repo add crystalnet https://charts.crystalnet.org
+helm install my-release crystalnet/paperless-ngx
 ```
 
 ## Introduction
@@ -73,8 +73,15 @@ Kubernetes: `>=1.22.0-0`
 
 To install the chart with the release name `my-release`:
 
+Direct install via oci://:
 ```shell
 helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
+```
+
+install using chartMuseum:
+```shell
+helm repo add crystalnet https://charts.crystalnet.org
+helm install my-release crystalnet/paperless-ngx
 ```
 
 These commands deploy paperless-ngx on the Kubernetes cluster in the default configuration.

@@ -8,6 +8,7 @@
 
 ### Misc
 
+- add release job ([ae475cc](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/ae475cc192cb1de6f1185abedb14130e226a251f))
 - add testing ([a0750da](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/a0750dae81002f5ca234c86d5ce377748982fe3c))
 - add release-helper config ([3157241](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/3157241216e4a54f9d0904cd04eca12a76397a5c))
 - add release-helper ([00d491f](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/00d491fd2cbd6901df6da26b68b4671cafe45978))

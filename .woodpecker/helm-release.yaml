@@ -6,11 +6,11 @@ when:
   - event: pull_request
 
 steps:
-  update-dependencies:
+  add-helm-repo:
     image: alpine/helm:3.13.3
     commands:
-      - helm dependencies update
-      
+      - helm repo add bitnami https://charts.bitnami.com/bitnami
+
   pack-chart:
     image: quay.io/helmpack/chart-releaser:v1.6.1
     commands:

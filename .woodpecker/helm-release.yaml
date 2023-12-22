@@ -33,7 +33,7 @@ steps:
       - event: tag
 
   release-chart-to-harbor:
-    image: harbor.crystalnet.org/library/alpine/helm:3.13.3
+    image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.13.3
     commands:
       - helm dependencies update chart
       - helm package chart

@@ -6,7 +6,7 @@ when:
 
 steps:
   lint:
-    image: alpine/helm:3.13.3
+    image: harbor.crystalnet.org/library/alpine/helm:3.13.3
     commands:
       - helm dependencies update chart
       - helm lint --with-subcharts chart

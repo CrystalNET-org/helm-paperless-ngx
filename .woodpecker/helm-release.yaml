@@ -35,12 +35,14 @@ steps:
   release-chart-to-harbor:
     image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.13.3
     secrets:
-      - harbor_helmrepo_user
-      - harbor_helmrepo_password
+      - source: harbor_helmrepo_user
+        target: HELMREPO_USER
+      - source: harbor_helmrepo_password
+        target: HELMREPO_PASSWORD
     commands:
       - helm dependencies update chart
       - helm package chart
-      - helm registry login -u ${HARBOR_HELMREPO_USER} -p ${HARBOR_HELMREPO_PASSWORD} oci://harbor.crystalnet.org/charts
+      - helm registry login -u ${HELMREPO_USER} -p ${HELMREPO_PASSWORD} oci://harbor.crystalnet.org/charts
       - helm push *.tgz oci://harbor.crystalnet.org/charts
     when:
       - event: tag

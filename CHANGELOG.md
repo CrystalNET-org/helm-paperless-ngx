@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.7](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.7) - 2023-12-22
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g
+
+### Misc
+
+- fix pipelines ([e08b0be](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/e08b0bec1dbd6dbe786afc390ad8c8d56ec67593))
+
 ## [0.0.1](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.0.1) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️

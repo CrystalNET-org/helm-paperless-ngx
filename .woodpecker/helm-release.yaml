@@ -40,7 +40,7 @@ steps:
       - source: harbor_helmrepo_password
         target: HELMREPO_PASSWORD
     commands:
-      - helm registry login -u $${HELMREPO_USER} -p $${HELMREPO_PASSWORD} oci://harbor.crystalnet.org/charts
+      - helm registry login -u $${HELMREPO_USER} -p $${HELMREPO_PASSWORD} harbor.crystalnet.org/charts
       - helm dependencies update chart
       - helm package chart
       - helm push *.tgz oci://harbor.crystalnet.org/charts

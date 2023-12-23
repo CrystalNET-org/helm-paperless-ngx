@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.13](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.13) - 2023-12-23
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g
+
+### Misc
+
+- escape params ([5f791f4](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/5f791f4665f758d3308e2ad353080469f43cc27b))
+
 ## [0.2.12](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.12) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️

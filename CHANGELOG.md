@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.14](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.14) - 2023-12-23
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g
+
+### Misc
+
+- fix oci releases ([019bca1](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/019bca18d112a11b47a0219957208f91ff1a2194))
+
 ## [0.2.13](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.13) - 2023-12-23
 
 ### ❤️ Thanks to all contributors! ❤️

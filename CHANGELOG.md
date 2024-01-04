@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.16](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.16) - 2024-01-04
+
+### ❤️ Thanks to all contributors! ❤️
+
+@psych0d0g
+
+### Misc
+
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.121.0 [[#15](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/15)]
+
 ## [0.2.15](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.15) - 2024-01-02
 
 ### ❤️ Thanks to all contributors! ❤️

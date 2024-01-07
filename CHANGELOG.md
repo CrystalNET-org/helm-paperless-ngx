@@ -8,6 +8,7 @@
 
 ### Misc
 
+- Update paperlessngx/paperless-ngx Docker tag to v2.3.1 [[#19](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/19)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.126.1 [[#18](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/18)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.122.0 [[#17](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/17)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.121.0 [[#15](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/15)]

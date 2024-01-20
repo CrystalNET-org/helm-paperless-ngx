@@ -4,10 +4,12 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Lukas Wingerberg, @psych0d0g
+@psych0d0g, @Lukas Wingerberg
 
 ### Misc
 
+- Update Helm release redis to ~18.7.0 [[#25](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/25)]
+- Update paperlessngx/paperless-ngx Docker tag to v2.4.0 [[#24](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/24)]
 - Update .gitattributes ([488ae73](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/488ae73be8aeff3313fd211faf2fb3d05ab15fb3))
 - Update .gitattributes ([78dc2fe](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/78dc2feb5d39cd08ab4bbf6fa51de59728f50fbf))
 - Create .gitattributes ([0d42eaf](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/0d42eaf0488b648155a5ccfc38c237d9170c1ea2))

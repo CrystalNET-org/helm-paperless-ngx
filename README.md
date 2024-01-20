@@ -19,7 +19,7 @@
   <br/>
   ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
   ![Version: 0.2.17](https://img.shields.io/badge/Version-0.2.17-informational?style=flat-square)
-  ![AppVersion: 2.3.2](https://img.shields.io/badge/AppVersion-2.3.2-informational?style=flat-square)
+  ![AppVersion: 2.4.0](https://img.shields.io/badge/AppVersion-2.4.0-informational?style=flat-square)
   [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/CrystalNET)](https://artifacthub.io/packages/helm/crystalnet/paperless-ngx)
 
 </div>
@@ -67,7 +67,7 @@ Kubernetes: `>=1.22.0-0`
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | mariadb(mariadb) | ~15.0.0 |
 | https://charts.bitnami.com/bitnami | postgresql(postgresql) | ~13.2.24 |
-| https://charts.bitnami.com/bitnami | redis(redis) | ~18.6.0 |
+| https://charts.bitnami.com/bitnami | redis(redis) | ~18.7.0 |
 
 ## Installing the Chart
 

@@ -8,6 +8,7 @@
 
 ### Misc
 
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.140.10 [[#23](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/23)]
 - Update Helm release redis to ~18.7.0 [[#25](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/25)]
 - Update paperlessngx/paperless-ngx Docker tag to v2.4.0 [[#24](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/24)]
 - Update .gitattributes ([488ae73](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/488ae73be8aeff3313fd211faf2fb3d05ab15fb3))

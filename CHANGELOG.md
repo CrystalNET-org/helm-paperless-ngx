@@ -8,6 +8,7 @@
 
 ### Misc
 
+- Update .gitattributes ([488ae73](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/488ae73be8aeff3313fd211faf2fb3d05ab15fb3))
 - Update .gitattributes ([78dc2fe](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/78dc2feb5d39cd08ab4bbf6fa51de59728f50fbf))
 - Create .gitattributes ([0d42eaf](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/0d42eaf0488b648155a5ccfc38c237d9170c1ea2))
 - Update paperlessngx/paperless-ngx Docker tag to v2.3.2 [[#21](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/21)]

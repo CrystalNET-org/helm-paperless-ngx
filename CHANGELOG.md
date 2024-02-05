@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.17](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.17) - 2024-01-20
+## [0.2.17](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.17) - 2024-02-05
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### Misc
 
+- Update paperlessngx/paperless-ngx Docker tag to v2.4.3 [[#29](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/29)]
+- Update Helm release mariadb to ~15.2.0 [[#26](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/26)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.140.10 [[#23](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/23)]
 - Update Helm release redis to ~18.7.0 [[#25](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/25)]
 - Update paperlessngx/paperless-ngx Docker tag to v2.4.0 [[#24](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/24)]

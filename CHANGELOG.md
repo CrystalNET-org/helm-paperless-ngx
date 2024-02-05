@@ -8,6 +8,9 @@
 
 ### Misc
 
+- Update harbor.crystalnet.org/dockerhub-proxy/woodpeckerci/plugin-git Docker tag to v2.5.0 [[#33](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/33)]
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.173.0 [[#32](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/32)]
+- Update harbor.crystalnet.org/dockerhub-proxy/alpine/helm Docker tag to v3.14.0 [[#31](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/31)]
 - Update paperlessngx/paperless-ngx Docker tag to v2.4.3 [[#29](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/29)]
 - Update Helm release mariadb to ~15.2.0 [[#26](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/26)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.140.10 [[#23](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/23)]

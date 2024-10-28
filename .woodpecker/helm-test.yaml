@@ -12,7 +12,7 @@ steps:
       - helm lint --with-subcharts chart
 
   test-chart:
-    image: quay.io/helmpack/chart-testing:v3.10.1
+    image: quay.io/helmpack/chart-testing:v3.11.0
     commands:
       - apk --no-cache add helm
       - helm repo add bitnami https://charts.bitnami.com/bitnami

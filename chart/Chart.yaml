@@ -7,7 +7,7 @@ home: https://github.com/CrystalNET-org/helm-paperless-ngx
 icon: https://avatars.githubusercontent.com/u/99562962?s=48&v=4
 version: 0.2.19
 # renovate: image=paperlessngx/paperless-ngx
-appVersion: "2.6.3"
+appVersion: "2.13.1"
 kubeVersion: ">=1.22.0-0"
 maintainers:
   - name: psych0d0g

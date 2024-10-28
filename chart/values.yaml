@@ -24,7 +24,7 @@ ftpd_image:
   # -- pull policy, if you set tag to latest, this should be set to Always to not end up with stale builds
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: "0.2.3"
+  tag: "0.2.4"
 
 serviceAccount:
   # -- Specifies whether a service account should be created

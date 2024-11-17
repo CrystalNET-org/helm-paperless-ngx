@@ -6,7 +6,7 @@ when:
 
 steps:
   lint:
-    image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.16.2
+    image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.16.3
     commands:
       - helm dependencies update chart
       - helm lint --with-subcharts chart

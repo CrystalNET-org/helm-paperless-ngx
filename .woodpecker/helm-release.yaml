@@ -33,7 +33,7 @@ steps:
       - event: tag
 
   release-chart-to-harbor:
-    image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.16.2
+    image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.16.3
     secrets:
       - source: harbor_helmrepo_user
         target: HELMREPO_USER

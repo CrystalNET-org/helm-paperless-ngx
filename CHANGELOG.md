@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.23](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.23) - 2024-11-29
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Cronix, @psych0d0g
+
+### Misc
+
+- Update README.md ([387a8ba](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/387a8ba10e3f1f8bf68f2493ea976096aaf13e49))
+- Update README.md ([027d304](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/027d304dadfd58ae99121984ce269c8862e730bc))
+- Update Helm release postgresql to ~16.1.0 [[#58](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/58)]
+- Update paperlessngx/paperless-ngx Docker tag to v2.13.4 [[#56](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/56)]
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v38.142.6 [[#57](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/57)]
+
 ## [0.2.17](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.17) - 2024-02-05
 
 ### ❤️ Thanks to all contributors! ❤️

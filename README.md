@@ -18,8 +18,8 @@
   ](LICENSE)
   <br/>
   ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
-  ![Version: 0.2.17](https://img.shields.io/badge/Version-0.2.17-informational?style=flat-square)
-  ![AppVersion: 2.4.3](https://img.shields.io/badge/AppVersion-2.4.3-informational?style=flat-square)
+  ![Version: 0.2.23](https://img.shields.io/badge/Version-0.2.23-informational?style=flat-square)
+  ![AppVersion: 2.13.4](https://img.shields.io/badge/AppVersion-2.13.4-informational?style=flat-square)
   [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/CrystalNET)](https://artifacthub.io/packages/helm/crystalnet/paperless-ngx)
 
 </div>
@@ -45,7 +45,7 @@ helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
 
 install using chartMuseum:
 ```shell
-helm repo add crystalnet https://helm.crystalnet.org
+helm repo add crystalnet https://charts.crystalnet.org
 helm install my-release crystalnet/paperless-ngx
 ```
 
@@ -65,9 +65,9 @@ Kubernetes: `>=1.22.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | mariadb(mariadb) | ~15.2.0 |
-| https://charts.bitnami.com/bitnami | postgresql(postgresql) | ~14.0.0 |
-| https://charts.bitnami.com/bitnami | redis(redis) | ~18.12.0 |
+| https://charts.bitnami.com/bitnami | mariadb(mariadb) | ~19.1.0 |
+| https://charts.bitnami.com/bitnami | postgresql(postgresql) | ~16.1.0 |
+| https://charts.bitnami.com/bitnami | redis(redis) | ~20.2.0 |
 
 ## Installing the Chart
 
@@ -80,7 +80,7 @@ helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
 
 install using chartMuseum:
 ```shell
-helm repo add crystalnet https://helm.crystalnet.org
+helm repo add crystalnet https://charts.crystalnet.org
 helm install my-release crystalnet/paperless-ngx
 ```
 
@@ -219,7 +219,7 @@ The command removes all the Kubernetes components associated with the chart and 
 |-----|-------------|---------|
 | `ftpd_image.pullPolicy` | pull policy, if you set tag to latest, this should be set to Always to not end up with stale builds | `"IfNotPresent"` |
 | `ftpd_image.repository` | referencing the docker image to use for the ftpd component | `"harbor.crystalnet.org/library/paperless-ftpd"` |
-| `ftpd_image.tag` | Overrides the image tag whose default is the chart appVersion. | `"0.2.3"` |
+| `ftpd_image.tag` | Overrides the image tag whose default is the chart appVersion. | `"0.2.4"` |
 | `mediaVolume` | The list of additional volumes that will be mounted inside paperless pod, this one to `/paperless/library`. | See [values.yaml](./values.yaml) |
 | `postgresql.auth.database` | define database schema name that should be available | `"paperless"` |
 | `postgresql.auth.password` | password to connect to the database | `"changeme"` |

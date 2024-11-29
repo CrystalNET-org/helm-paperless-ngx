@@ -167,6 +167,12 @@ Create chart environment and make it reusable
   value: "/var/log/paperless"
 - name: PAPERLESS_URL
   value: {{ .Values.config.paperless_url | quote }}
+{{- if .Values.env }}
+{{- range $env, $value := .Values.env }}
+- name: {{ $env }}
+  value: {{ quote $value }}
+{{- end }}
+{{- end }}
 {{- end }}
 
 

@@ -158,7 +158,7 @@ Create chart environment and make it reusable
 - name: PAPERLESS_CONSUMER_RECURSIVE
   value: {{ .Values.config.consumer.recursive | quote }}
 - name: PAPERLESS_CONSUMPTION_DIR
-  value: "/mnt/library/consume"
+  value: "/var/paperless/consume"
 - name: PAPERLESS_DATA_DIR
   value: "/var/paperless/data"
 - name: PAPERLESS_MEDIA_ROOT

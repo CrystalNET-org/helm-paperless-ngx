@@ -8,6 +8,7 @@
 
 ### Misc
 
+- Update README.md ([387a8ba](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/387a8ba10e3f1f8bf68f2493ea976096aaf13e49))
 - Update README.md ([027d304](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/027d304dadfd58ae99121984ce269c8862e730bc))
 - Update Helm release postgresql to ~16.1.0 [[#58](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/58)]
 - Update paperlessngx/paperless-ngx Docker tag to v2.13.4 [[#56](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/56)]

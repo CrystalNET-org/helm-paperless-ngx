@@ -80,7 +80,7 @@ helm install my-release oci://harbor.crystalnet.org/charts/paperless-ngx
 
 install using chartMuseum:
 ```shell
-helm repo add crystalnet https://helm.crystalnet.org
+helm repo add crystalnet https://charts.crystalnet.org
 helm install my-release crystalnet/paperless-ngx
 ```
 

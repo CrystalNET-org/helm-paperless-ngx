@@ -7,7 +7,7 @@ when:
 
 steps:
   pack-chart:
-    image: quay.io/helmpack/chart-releaser:v1.6.1
+    image: quay.io/helmpack/chart-releaser:v1.7.0
     commands:
       - apk --no-cache add helm
       - helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -15,7 +15,7 @@ steps:
       - cr package chart
 
   release-chart:
-    image: quay.io/helmpack/chart-releaser:v1.6.1
+    image: quay.io/helmpack/chart-releaser:v1.7.0
     secrets:
       - source: github_token
         target: CR_TOKEN

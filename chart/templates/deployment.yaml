@@ -26,13 +26,28 @@ spec:
       {{- end }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: {{ .Chart.Name }}-migrate
+          command:
+          - python3
+          - manage.py
+          - migrate
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- include "paperless.env" . | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            {{- include "paperless.volumeMounts" . | nindent 12 }}
+            - name: data
+              mountPath: /var/paperless/data
       containers:
         - name: {{ .Chart.Name }}-webserver
-          command: 
-          - gunicorn 
-          - -c 
-          - /usr/src/paperless/gunicorn.conf.py
-          - paperless.asgi:application
+          command:
+            {{- toYaml .Values.webserver.command | nindent 10 }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

@@ -26,6 +26,23 @@ ftpd_image:
   # -- Overrides the image tag whose default is the chart appVersion.
   tag: "0.2.4"
 
+webserver:
+  # -- Command used to start the webserver container. paperless-ngx images
+  #    from ~2.14+ dropped gunicorn in favor of granian - this matches the
+  #    image's own internal s6 webserver service
+  #    (/etc/s6-overlay/s6-rc.d/svc-webserver/run). Override this if you're
+  #    running an older image that still ships gunicorn.
+  command:
+    - granian
+    - --host
+    - "::"
+    - --interface
+    - asginl
+    - --ws
+    - --loop
+    - uvloop
+    - paperless.asgi:application
+
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true

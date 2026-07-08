@@ -6,33 +6,6 @@ when:
   - event: pull_request
 
 steps:
-  pack-chart:
-    image: quay.io/helmpack/chart-releaser:v1.8.1
-    commands:
-      - apk --no-cache add helm
-      - helm repo add bitnami https://charts.bitnami.com/bitnami
-      - helm repo add valkey https://valkey.io/valkey-helm/
-      - mkdir -p .cr-index
-      - cr package chart
-
-  release-chart:
-    image: quay.io/helmpack/chart-releaser:v1.8.1
-    environment:
-      CR_TOKEN:
-        from_secret: github_token
-    commands:
-      - git config --global user.email "woodpecker-bot@crystalnet.org"
-      - git config --global user.name "woodpecker-bot"
-      - cr upload --skip-existing --owner CrystalNET-org --git-repo helm.crystalnet.org --release-name-template "helm-{{ .Name }}-{{ .Version }}"
-      - git clone https://github.com/CrystalNET-org/helm.crystalnet.org.git
-      - cd helm.crystalnet.org/
-      - cr index --owner CrystalNET-org --git-repo helm.crystalnet.org --pages-branch main --package-path ../.cr-release-packages --index-path ../.cr-index/index.yaml --push --release-name-template "helm-{{ .Name }}-{{ .Version }}"
-      - cd ..
-      - rm -rf helm.crystalnet.org/
-      - git reset --hard
-    when:
-      - event: tag
-
   release-chart-to-harbor:
     image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.21.2
     environment:

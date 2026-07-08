@@ -158,7 +158,11 @@ Create chart environment and make it reusable
 - name: PAPERLESS_CONSUMER_RECURSIVE
   value: {{ .Values.config.consumer.recursive | quote }}
 - name: PAPERLESS_CONSUMPTION_DIR
+{{- if .Values.mediaVolume.enabled }}
   value: "/mnt/library/consume"
+{{- else }}
+  value: "/var/paperless/consume"
+{{- end }}
 - name: PAPERLESS_DATA_DIR
   value: "/var/paperless/data"
 - name: PAPERLESS_MEDIA_ROOT
@@ -167,6 +171,12 @@ Create chart environment and make it reusable
   value: "/var/log/paperless"
 - name: PAPERLESS_URL
   value: {{ .Values.config.paperless_url | quote }}
+{{- if .Values.env }}
+{{- range $env, $value := .Values.env }}
+- name: {{ $env }}
+  value: {{ quote $value }}
+{{- end }}
+{{- end }}
 {{- end }}
 
 

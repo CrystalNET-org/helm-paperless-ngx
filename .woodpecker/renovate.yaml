@@ -14,7 +14,7 @@ steps:
       RENOVATE_ENDPOINT: https://api.github.com
       SHELL: /bin/bash
       GITHUB_COM_TOKEN:
-        from_secret: github_com_token
+        from_secret: GITHUB_TOKEN
       RENOVATE_TOKEN:
         from_secret: renovate_token
     commands:

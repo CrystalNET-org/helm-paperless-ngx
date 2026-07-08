@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.2.23](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.23) - 2026-07-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Psych0D0g, @psych0d0g, @Cronix
+
+### Misc
+
+- ci: add valkey helm repo to chart-testing/chart-releaser steps ([b2e1f42](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/b2e1f4202548f8c80b08d4b597e97d1359ba0758))
+- chore: retrigger release-helper after clearing stale next-release/main branch ([c324886](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/c3248861573d8a1d7a1489edf7e478d30d0e8ebf))
+- feat: add persistence.media option for non-mediaVolume setups ([97279f7](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/97279f7e678ada47d58a34b6b30f9a7382347277))
+- chore(deps): update helm release postgresql to ~16.7.0 [[#64](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/64)]
+- chore(deps): update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate docker tag to v38.142.7 [[#59](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/59)]
+- chore(deps): update harbor.crystalnet.org/library/paperless-ftpd docker tag to v0.2.5 [[#62](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/62)]
+- chore(deps): update harbor.crystalnet.org/dockerhub-proxy/alpine/helm docker tag to v3.21.2 [[#66](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/66)]
+- chore(deps): update quay.io/helmpack/chart-releaser docker tag to v1.8.1 [[#75](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/75)]
+- chore(deps): update harbor.crystalnet.org/dockerhub-proxy/woodpeckerci/plugin-git docker tag to v2.9.2 [[#74](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/74)]
+- Update renovate.yaml ([b4f2615](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/b4f2615e82eccbbc8778a12566e08bc335570031))
+- Update quay.io/helmpack/chart-releaser Docker tag to v1.7.0 [[#71](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/71)]
+- Update quay.io/helmpack/chart-testing Docker tag to v3.12.0 [[#72](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/72)]
+- ci: fix deprecated secrets syntax flagged by woodpecker's linter ([8cfe9c7](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/8cfe9c7d4e7c357b2fc3ae3ae7c7f284bd971151))
+- Swap redis dependency for valkey (valkey-io's own chart, not Bitnami) ([a6db5de](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/a6db5dea719364c746996fdad95e136a64647202))
+- env: use raw EnvVar list instead of a plain string map ([379d953](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/379d9532520c09979f116d3b6204b46f86d1034b))
+- fix: PAPERLESS_CONSUMPTION_DIR is wrong when mediaVolume is disabled; add env passthrough ([43c95a2](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/43c95a20924fa0bbfa98b1caa7cd2dbde95e5a60))
+- fix: switch webserver command from gunicorn to granian, add migrate initContainer ([032f01d](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/032f01d9ce70b980d6e41ab0c51ed7097f220e4b))
+- Update README.md ([387a8ba](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/387a8ba10e3f1f8bf68f2493ea976096aaf13e49))
+- Update README.md ([027d304](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/027d304dadfd58ae99121984ce269c8862e730bc))
+- Update Helm release postgresql to ~16.1.0 [[#58](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/58)]
+- Update paperlessngx/paperless-ngx Docker tag to v2.13.4 [[#56](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/56)]
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v38.142.6 [[#57](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/57)]
+
 ## [0.2.17](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.17) - 2024-02-05
 
 ### ❤️ Thanks to all contributors! ❤️

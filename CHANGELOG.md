@@ -4,10 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@psych0d0g, @Psych0D0g, @Cronix
+@Cronix, @psych0d0g, @Psych0D0g
 
 ### Misc
 
+- Update renovate.yaml ([b4f2615](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/b4f2615e82eccbbc8778a12566e08bc335570031))
 - Update quay.io/helmpack/chart-releaser Docker tag to v1.7.0 [[#71](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/71)]
 - Update quay.io/helmpack/chart-testing Docker tag to v3.12.0 [[#72](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/72)]
 - ci: fix deprecated secrets syntax flagged by woodpecker's linter ([8cfe9c7](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/8cfe9c7d4e7c357b2fc3ae3ae7c7f284bd971151))

@@ -1,13 +1,19 @@
 # Changelog
 
-## [0.2.23](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.23) - 2024-11-29
+## [0.2.23](https://github.com/CrystalNET-org/helm-paperless-ngx/releases/tag/0.2.23) - 2026-07-08
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Cronix, @psych0d0g
+@psych0d0g, @Psych0D0g, @Cronix
 
 ### Misc
 
+- Update quay.io/helmpack/chart-testing Docker tag to v3.12.0 [[#72](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/72)]
+- ci: fix deprecated secrets syntax flagged by woodpecker's linter ([8cfe9c7](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/8cfe9c7d4e7c357b2fc3ae3ae7c7f284bd971151))
+- Swap redis dependency for valkey (valkey-io's own chart, not Bitnami) ([a6db5de](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/a6db5dea719364c746996fdad95e136a64647202))
+- env: use raw EnvVar list instead of a plain string map ([379d953](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/379d9532520c09979f116d3b6204b46f86d1034b))
+- fix: PAPERLESS_CONSUMPTION_DIR is wrong when mediaVolume is disabled; add env passthrough ([43c95a2](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/43c95a20924fa0bbfa98b1caa7cd2dbde95e5a60))
+- fix: switch webserver command from gunicorn to granian, add migrate initContainer ([032f01d](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/032f01d9ce70b980d6e41ab0c51ed7097f220e4b))
 - Update README.md ([387a8ba](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/387a8ba10e3f1f8bf68f2493ea976096aaf13e49))
 - Update README.md ([027d304](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/027d304dadfd58ae99121984ce269c8862e730bc))
 - Update Helm release postgresql to ~16.1.0 [[#58](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/58)]

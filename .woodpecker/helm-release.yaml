@@ -11,6 +11,7 @@ steps:
     commands:
       - apk --no-cache add helm
       - helm repo add bitnami https://charts.bitnami.com/bitnami
+      - helm repo add valkey https://valkey.io/valkey-helm/
       - mkdir -p .cr-index
       - cr package chart
 

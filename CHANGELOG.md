@@ -8,6 +8,7 @@
 
 ### Misc
 
+- ci: add valkey helm repo to chart-testing/chart-releaser steps ([b2e1f42](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/b2e1f4202548f8c80b08d4b597e97d1359ba0758))
 - chore: retrigger release-helper after clearing stale next-release/main branch ([c324886](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/c3248861573d8a1d7a1489edf7e478d30d0e8ebf))
 - feat: add persistence.media option for non-mediaVolume setups ([97279f7](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/97279f7e678ada47d58a34b6b30f9a7382347277))
 - chore(deps): update helm release postgresql to ~16.7.0 [[#64](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/64)]

@@ -7,7 +7,7 @@ clone:
 
 steps:
   renovate:
-    image: harbor.crystalnet.org/dockerhub-proxy/renovate/renovate:38.142.6
+    image: harbor.crystalnet.org/dockerhub-proxy/renovate/renovate:38.142.7
     environment:
       RENOVATE_CONFIG_FILE: .woodpecker/renovate_config.json
       RENOVATE_DRY_RUN: false

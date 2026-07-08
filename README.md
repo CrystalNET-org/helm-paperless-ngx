@@ -65,9 +65,9 @@ Kubernetes: `>=1.22.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | mariadb(mariadb) | ~15.2.0 |
-| https://charts.bitnami.com/bitnami | postgresql(postgresql) | ~14.0.0 |
-| https://charts.bitnami.com/bitnami | redis(redis) | ~18.12.0 |
+| https://charts.bitnami.com/bitnami | mariadb(mariadb) | ~19.1.0 |
+| https://charts.bitnami.com/bitnami | postgresql(postgresql) | ~16.1.0 |
+| https://valkey.io/valkey-helm/ | valkey(valkey) | ~0.10.0 |
 
 ## Installing the Chart
 
@@ -204,15 +204,15 @@ The command removes all the Kubernetes components associated with the chart and 
 | `mariadb.enabled` | provision an instance of the mariadb sub-chart | `false` |
 | `mariadb.primary.persistence.enabled` | enable to not loose your database contents on updates | `false` |
 
-### redis parameters
+### valkey parameters
 
 | Key | Description | Default |
 |-----|-------------|---------|
-| `redis.architecture` | can be set to replication to spawn a full redis cluster with 3 nodes instead | `"standalone"` |
-| `redis.auth.enabled` | enable redis authentication mode | `true` |
-| `redis.auth.password` | password that gets used for the connection between paperless and redis | `"changeme"` |
-| `redis.enabled` | provision an instance of the redis sub-chart | `true` |
-| `redis.redisPort` | default port for redis to listen on | `6379` |
+| `valkey.auth.aclUsers.default.password` | password that gets used for the connection between paperless and valkey | `"changeme"` |
+| `valkey.auth.aclUsers.default.permissions` | full-access permissions for the default user, matching a plain single-password setup (no per-user ACL restrictions) | `"~* &* +@all"` |
+| `valkey.auth.enabled` | enable ACL-based authentication (a `default` user must be defined below when enabled - see valkey-io/valkey-helm's own auth docs) | `true` |
+| `valkey.enabled` | provision an instance of the valkey sub-chart | `true` |
+| `valkey.port` | default port for valkey to listen on | `6379` |
 ### Other parameters
 
 | Key | Description | Default |

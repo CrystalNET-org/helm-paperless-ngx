@@ -65,13 +65,13 @@ Create the name of the service account to use
 Create chart environment and make it reusable
 */}}
 {{- define "paperless.env" -}}
-{{- if .Values.redis.enabled }}
-{{- if .Values.redis.auth.enabled }}
+{{- if .Values.valkey.enabled }}
+{{- if .Values.valkey.auth.enabled }}
 - name: PAPERLESS_REDIS
-  value: {{ printf "redis://:%s@%s-redis-headless:%s" .Values.redis.auth.password .Release.Name ( .Values.redis.redisPort | default "6379" | toString ) | quote }}
+  value: {{ printf "redis://:%s@%s-valkey:%s" .Values.valkey.auth.aclUsers.default.password .Release.Name ( .Values.valkey.port | default "6379" | toString ) | quote }}
 {{- else }}
 - name: PAPERLESS_REDIS
-  value: {{ printf "redis://%s-redis-headless:%s" .Release.Name ( .Values.redis.redisPort | default "6379" | toString ) | quote }}
+  value: {{ printf "redis://%s-valkey:%s" .Release.Name ( .Values.valkey.port | default "6379" | toString ) | quote }}
 {{- end }}
 {{- end }}
 {{- if .Values.config.auth.existing_secret }}

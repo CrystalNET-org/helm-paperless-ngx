@@ -16,11 +16,11 @@ sources:
   - https://github.com/paperless-ngx/paperless-ngx
   - https://github.com/CrystalNET-org/helm-paperless-ngx
 dependencies:
-  - name: redis
-    version: ~20.2.0
-    repository: https://charts.bitnami.com/bitnami
-    alias: redis
-    condition: redis.enabled
+  - name: valkey
+    version: ~0.10.0
+    repository: https://valkey.io/valkey-helm/
+    alias: valkey
+    condition: valkey.enabled
   - name: mariadb
     version: ~19.1.0
     repository: https://charts.bitnami.com/bitnami

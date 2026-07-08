@@ -223,6 +223,19 @@ persistence:
         requests:
           storage: 1Gi
 
+# -- Extra environment variables for the webserver/consumer/celery/celery-beat
+#    containers, as a raw list of Kubernetes EnvVar objects - supports both
+#    plain `value` and `valueFrom` (secretKeyRef/configMapKeyRef/etc).
+# @default -- []
+# -- @example
+# env:
+#   - name: PAPERLESS_DBHOST
+#     valueFrom:
+#       configMapKeyRef:
+#         name: bring-your-own-db-config
+#         key: hostname
+env: []
+
 config:
   auth:
     # -- default username for the admin user

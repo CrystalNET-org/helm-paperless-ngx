@@ -213,6 +213,9 @@ Create chart volumes and make it reusable
   {{- if .Values.mediaVolume.enabled }}
   persistentVolumeClaim:
     claimName: {{ include "paperless.fullname" $ }}-mediavol-{{ .Values.mediaVolume.name }}
+  {{- else if .Values.persistence.media.enabled }}
+  persistentVolumeClaim:
+    claimName: {{ include "paperless.fullname" . }}-media
   {{- else }}
   emptyDir: { }
   {{- end }}

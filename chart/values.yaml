@@ -214,6 +214,22 @@ persistence:
       resources:
         requests:
           storage: 10Gi
+  media:
+    # -- Enable paperless media persistence using `PVC`. (your actual documents -
+    #    originals, archive, thumbnails). Only takes effect when mediaVolume.enabled
+    #    is false - mediaVolume's own PVC is used instead if that's enabled. If
+    #    you are NOT using mediaVolume, enable this - otherwise media falls back
+    #    to an emptyDir and your documents will not survive a pod restart.
+    enabled: false
+    # Claims that pods are allowed to reference (see
+    # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumeclaim-v1-core
+    # for structural reference)
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
 
   log:
     # -- Enable paperless data persistence using `PVC`. (search index, SQLite database, classification model, etc)

@@ -8,6 +8,7 @@
 
 ### Misc
 
+- Update quay.io/helmpack/chart-releaser Docker tag to v1.7.0 [[#71](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/71)]
 - Update quay.io/helmpack/chart-testing Docker tag to v3.12.0 [[#72](https://github.com/CrystalNET-org/helm-paperless-ngx/pull/72)]
 - ci: fix deprecated secrets syntax flagged by woodpecker's linter ([8cfe9c7](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/8cfe9c7d4e7c357b2fc3ae3ae7c7f284bd971151))
 - Swap redis dependency for valkey (valkey-io's own chart, not Bitnami) ([a6db5de](https://github.com/CrystalNET-org/helm-paperless-ngx/commit/a6db5dea719364c746996fdad95e136a64647202))

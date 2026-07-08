@@ -241,7 +241,7 @@ The command removes all the Kubernetes components associated with the chart and 
     {{- end }}
 {{- end }}
 
-### redis parameters
+### valkey parameters
 
 | Key | Description | Default |
 |-----|-------------|---------|
@@ -249,7 +249,7 @@ The command removes all the Kubernetes components associated with the chart and 
     {{- if and
       (not (has .Key $params))
       (or
-        (hasPrefix "redis" .Key)
+        (hasPrefix "valkey" .Key)
       )
     }}
         {{- $params = append $params .Key }}

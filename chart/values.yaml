@@ -26,6 +26,23 @@ ftpd_image:
   # -- Overrides the image tag whose default is the chart appVersion.
   tag: "0.2.4"
 
+webserver:
+  # -- Command used to start the webserver container. paperless-ngx images
+  #    from ~2.14+ dropped gunicorn in favor of granian - this matches the
+  #    image's own internal s6 webserver service
+  #    (/etc/s6-overlay/s6-rc.d/svc-webserver/run). Override this if you're
+  #    running an older image that still ships gunicorn.
+  command:
+    - granian
+    - --host
+    - "::"
+    - --interface
+    - asginl
+    - --ws
+    - --loop
+    - uvloop
+    - paperless.asgi:application
+
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true
@@ -112,22 +129,27 @@ tolerations: []
 # -- define affinity, to have the pod run on the same node as other specific things
 affinity: {}
 
-# Enable and configure redis subchart under this key.
-# If enabled, the app's redis envs will be set for you.
-# [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/redis)
-# -- @default -- See https://github.com/bitnami/charts/tree/master/bitnami/redis#parameters for more options
-redis:
-  # -- provision an instance of the redis sub-chart
+# Enable and configure the valkey subchart under this key (the app's
+# PAPERLESS_REDIS env is derived from this - valkey speaks the Redis
+# protocol, paperless doesn't need to know the difference).
+# [[ref]](https://github.com/valkey-io/valkey-helm)
+# -- @default -- See https://github.com/valkey-io/valkey-helm/blob/main/valkey/values.yaml for more options
+valkey:
+  # -- provision an instance of the valkey sub-chart
   enabled: true
-  # -- default port for redis to listen on
-  redisPort: 6379
-  # -- can be set to replication to spawn a full redis cluster with 3 nodes instead
-  architecture: standalone
+  # -- default port for valkey to listen on
+  port: 6379
   auth:
-    # -- enable redis authentication mode
+    # -- enable ACL-based authentication (a `default` user must be defined
+    #    below when enabled - see valkey-io/valkey-helm's own auth docs)
     enabled: true
-    # -- password that gets used for the connection between paperless and redis
-    password: "changeme"
+    aclUsers:
+      default:
+        # -- full-access permissions for the default user, matching a
+        #    plain single-password setup (no per-user ACL restrictions)
+        permissions: "~* &* +@all"
+        # -- password that gets used for the connection between paperless and valkey
+        password: "changeme"
 
 # Enable and configure mariadb database subchart under this key.
 # If enabled, the app's db envs will be set for you.
@@ -205,6 +227,19 @@ persistence:
       resources:
         requests:
           storage: 1Gi
+
+# -- Extra environment variables for the webserver/consumer/celery/celery-beat
+#    containers, as a raw list of Kubernetes EnvVar objects - supports both
+#    plain `value` and `valueFrom` (secretKeyRef/configMapKeyRef/etc).
+# @default -- []
+# -- @example
+# env:
+#   - name: PAPERLESS_DBHOST
+#     valueFrom:
+#       configMapKeyRef:
+#         name: bring-your-own-db-config
+#         key: hostname
+env: []
 
 config:
   auth:

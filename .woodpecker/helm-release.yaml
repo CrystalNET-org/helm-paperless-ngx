@@ -16,9 +16,9 @@ steps:
 
   release-chart:
     image: quay.io/helmpack/chart-releaser:v1.6.1
-    secrets:
-      - source: github_token
-        target: CR_TOKEN
+    environment:
+      CR_TOKEN:
+        from_secret: github_token
     commands:
       - git config --global user.email "woodpecker-bot@crystalnet.org"
       - git config --global user.name "woodpecker-bot"
@@ -34,11 +34,11 @@ steps:
 
   release-chart-to-harbor:
     image: harbor.crystalnet.org/dockerhub-proxy/alpine/helm:3.16.2
-    secrets:
-      - source: harbor_helmrepo_user
-        target: HELMREPO_USER
-      - source: harbor_helmrepo_password
-        target: HELMREPO_PASSWORD
+    environment:
+      HELMREPO_USER:
+        from_secret: harbor_helmrepo_user
+      HELMREPO_PASSWORD:
+        from_secret: harbor_helmrepo_password
     commands:
       - helm registry login -u $${HELMREPO_USER} -p $${HELMREPO_PASSWORD} harbor.crystalnet.org/charts
       - helm dependencies update chart
